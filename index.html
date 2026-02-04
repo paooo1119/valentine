@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Valentine’s Day ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Floating hearts */
+.heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 20px;
+    animation: floatUp 8s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(-110vh) scale(1.5); }
+}
+
+header {
+    padding: 90px 20px 70px;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    animation: fadeDown 1.2s ease;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+section {
+    padding: 60px 20px;
+}
+
+.card {
+    max-width: 800px;
+    margin: auto;
+    background: rgba(255,255,255,0.18);
+    padding: 35px;
+    border-radius: 25px;
+    backdrop-filter: blur(6px);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 40px auto 0;
+}
+
+.gallery img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+.letter-btn {
+    padding: 15px 45px;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    background: #ff4d6d;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.letter-btn:hover {
+    transform: scale(1.08);
+}
+
+.love-letter {
+    max-width: 700px;
+    margin: 40px auto 0;
+    background: #fff;
+    color: #333;
+    padding: 35px;
+    border-radius: 20px;
+    display: none;
+}
+
+footer {
+    padding: 30px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+    z-index: 999;
+}
+
+.modal-content {
+    background: #fff;
+    color: #333;
+    max-width: 500px;
+    margin: 15% auto;
+    padding: 30px;
+    border-radius: 20px;
+    position: relative;
+    animation: openLetter 0.4s ease;
+}
+
+@keyframes openLetter {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    font-size: 26px;
+    cursor: pointer;
+    color: #ff4d6d;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating hearts -->
+<span class="heart" style="left:10%">❤️</span>
+<span class="heart" style="left:30%; animation-delay:2s;">💖</span>
+<span class="heart" style="left:50%; animation-delay:4s;">💕</span>
+<span class="heart" style="left:70%; animation-delay:1s;">❤️</span>
+<span class="heart" style="left:90%; animation-delay:3s;">💗</span>
+
+<header>
+    <h1>Happy Valentine’s Day Babyyy</h1>
+    <p>Tignan mo to HAHAHAHAHA</p>
+</header>
+
+<section>
+    <div class="card">
+        <p>Thank you for being my happiness, my comfort, and my forever po hehehe</p>
+    </div>
+</section>
+
+<section>
+    <h2 style="font-family:'Playfair Display', serif; font-size:2.2rem;">
+        Memories natin HAHAHAHA
+    </h2>
+
+    <div class="gallery">
+        <img src="images/a.jpg" onclick="openMemory('Eto yung araw na sobrang saya ko kasi kasama kita 🥺❤️')">
+        <img src="images/aa.jpg" onclick="openMemory('Dito ko na-realize na mahal na mahal talaga kita hehe 💖')">
+        <img src="images/aaa.jpg" onclick="openMemory('Isa to sa pinaka-favorite kong memory with you 😚')">
+        <img src="images/aaaa.jpg" onclick="openMemory('Simple lang pero sobrang special kasi ikaw kasama ko 💕')">
+    </div>
+
+    <div style="margin-top:50px;">
+        <button class="letter-btn" onclick="toggleLetter()">Ang Love Letter ng eabab na toh 💌</button>
+
+        <div class="love-letter" id="letter">
+            <h3 style="color:#ff4d6d;">My Baby,</h3>
+            <p>
+                Happy Valentine’s Day po!  
+                Ginawa ko tong website na to para sayo HAHAHA.  
+                Thank you kasi andito ka lagi para sakin kahit minsan nakakabwisit ako 😭  
+                I love you sooo much mwa mwa 💕 bawal na magbreak.
+            </p>
+            <p style="margin-top:15px;">Forever yours, Pao ❤️</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>I LOVE YOUUUUU</p>
+</footer>
+
+<div id="memoryModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">×</span>
+        <p id="memoryText"></p>
+    </div>
+</div>
+
+<script>
+function toggleLetter() {
+    const letter = document.getElementById("letter");
+    letter.style.display = letter.style.display === "block" ? "none" : "block";
+}
+
+function openMemory(message) {
+    document.getElementById("memoryText").innerText = message;
+    document.getElementById("memoryModal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("memoryModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+    const modal = document.getElementById("memoryModal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
